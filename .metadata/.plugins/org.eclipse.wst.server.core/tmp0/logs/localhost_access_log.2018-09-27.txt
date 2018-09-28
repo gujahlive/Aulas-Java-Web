@@ -31,3 +31,9 @@
 0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:20:02 -0300] "GET /JavaWeb/img/cookie.jpg HTTP/1.1" 404 1104
 0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:20:33 -0300] "GET /JavaWeb/Cookies.jsp?nome=guga HTTP/1.1" 200 184
 0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:20:34 -0300] "GET /JavaWeb/img/teste.jpg HTTP/1.1" 200 47419
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:33:46 -0300] "GET /JavaWeb/Cadastro.jsp HTTP/1.1" 200 257
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:33:52 -0300] "GET /JavaWeb/Cookies.jsp?nome=gugu HTTP/1.1" 200 184
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:33:52 -0300] "GET /JavaWeb/img/teste.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:34:04 -0300] "GET /JavaWeb/Cadastro.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:34:04 -0300] "GET /JavaWeb/Cookies.jsp HTTP/1.1" 200 184
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:34:35 -0300] "GET /JavaWeb/Cadastro.jsp HTTP/1.1" 200 257
