@@ -23,3 +23,11 @@
 0:0:0:0:0:0:0:1 - - [27/Sep/2018:21:55:38 -0300] "GET /JavaWeb/Formulario.jsp HTTP/1.1" 200 845
 0:0:0:0:0:0:0:1 - - [27/Sep/2018:21:55:45 -0300] "GET /JavaWeb/Dados.jsp?pais=Brasil&sexo=Masculino&linguas=Portugu%EAs&linguas=Ingl%EAs HTTP/1.1" 200 224
 0:0:0:0:0:0:0:1 - - [27/Sep/2018:21:59:53 -0300] "GET /JavaWeb/Formulario.jsp HTTP/1.1" 200 855
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:21:59:57 -0300] "GET /JavaWeb/Dados.jsp?pais=Brasil&sexo=Masculino&linguas=Portugu%C3%AAs&linguas=Ingl%C3%AAs HTTP/1.1" 200 224
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:01:26 -0300] "GET /JavaWeb/Formulario.jsp HTTP/1.1" 200 855
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:01:30 -0300] "GET /JavaWeb/Dados.jsp?pais=Brasil&sexo=Masculino&linguas=Portugu%C3%AAs HTTP/1.1" 200 206
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:19:57 -0300] "GET /JavaWeb/Cadastro.jsp HTTP/1.1" 200 254
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:20:01 -0300] "GET /JavaWeb/Cookies.jsp?nome=guga HTTP/1.1" 200 185
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:20:02 -0300] "GET /JavaWeb/img/cookie.jpg HTTP/1.1" 404 1104
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:20:33 -0300] "GET /JavaWeb/Cookies.jsp?nome=guga HTTP/1.1" 200 184
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:20:34 -0300] "GET /JavaWeb/img/teste.jpg HTTP/1.1" 200 47419

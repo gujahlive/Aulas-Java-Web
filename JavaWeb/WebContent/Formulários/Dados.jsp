@@ -15,6 +15,7 @@ String sexo = request.getParameter("sexo");
 out.print("Seu sexo é: "+sexo+"<br/>");
 
 String[] linguas = request.getParameterValues("linguas");// passa parameter values pq são vários valores
+
 for(String lingua : linguas){//foreach
 	out.print("Voce fala: "+lingua+"<br/>");
 }
