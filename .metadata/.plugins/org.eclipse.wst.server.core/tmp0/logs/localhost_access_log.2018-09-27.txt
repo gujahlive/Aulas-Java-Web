@@ -37,3 +37,6 @@
 0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:34:04 -0300] "GET /JavaWeb/Cadastro.jsp HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:34:04 -0300] "GET /JavaWeb/Cookies.jsp HTTP/1.1" 200 184
 0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:34:35 -0300] "GET /JavaWeb/Cadastro.jsp HTTP/1.1" 200 257
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:50:29 -0300] "GET /JavaWeb/Sess%C3%A3o/login.jsp HTTP/1.1" 200 344
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:50:33 -0300] "POST /JavaWeb/Sess%C3%A3o/dadosPessoais.jsp HTTP/1.1" 200 186
+0:0:0:0:0:0:0:1 - - [27/Sep/2018:22:50:35 -0300] "GET /JavaWeb/Sess%C3%A3o/login.jsp HTTP/1.1" 200 344
