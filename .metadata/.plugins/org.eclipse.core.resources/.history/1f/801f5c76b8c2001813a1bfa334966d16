@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="Dados.jsp">
+		País:
+		<select name="pais">
+			<option>Brasil</option>
+			<option>Argetina</option>
+			<option>EUA</option>
+			<option>Rússia</option>
+			<option>Japão</option>
+		</select>
+		<input type="radio" name="sexo" value="Masculino"/>Masculino
+		<input type="radio" name="sexo" value="Feminino"/>Feminino
+		<br/><br/>
+		<input type="submit" value="Enviar">
+	</form>
+</body>
+</html>
