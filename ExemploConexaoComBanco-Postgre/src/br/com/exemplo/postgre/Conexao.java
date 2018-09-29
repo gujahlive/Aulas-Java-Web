@@ -10,7 +10,7 @@ public class Conexao {
 	 try {
 				Class.forName("org.postgresql.Driver");
 				con =DriverManager.getConnection("jdbc:postgresql://localhost:5432/exemplo","postgres","1234");
-				System.out.println("Conexao SUCESS!");
+				System.out.println("Conexao SUCESSo!");
 				
 		} catch (SQLException e) {
 			System.out.println("Erro - Conexao"+e.getMessage());

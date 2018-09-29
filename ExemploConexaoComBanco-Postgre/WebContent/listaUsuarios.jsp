@@ -16,10 +16,35 @@
 
 //List<Usuario> lista = userDAO.buscarTodos(user);
 List<Usuario> listaResult = (List<Usuario>)request.getAttribute("lista");// variavel referente ao servlet
-for(Usuario u : listaResult) {
-	out.println("id: "+u.getId()+"nome: "+u.getNome()+"email: "+u.getEmail()+"senha: "+u.getSenha());//u é a variavel do for que compara com o resultado da lista
-}
 
 %>
+
+<table border="1">
+<tr bgcolor="#eaeaea">
+	<th>ID</th>
+	<th>Nome</th>
+	<th>Email</th>
+	<th>Senha</th>
+	<th>Excluir</th>
+	<th>Editar</th>
+</tr>
+<%
+for(Usuario u : listaResult) {
+%>
+<tr >
+	<td><%=u.getId() %></td>
+	<td><%=u.getNome() %></td>
+	<td><%=u.getEmail() %></td>
+	<td><%=u.getSenha() %></td>
+	<th><a href="UsuarioController?acao=delete&id=<%=u.getId() %>">DELETAR</a></th>
+	<th><a href="UsuarioController?acao=editar&id=<%=u.getId() %>">EDITAR</a></th>
+</tr>
+
+<%	
+}
+%>
+
+</table>
+
 </body>
 </html>

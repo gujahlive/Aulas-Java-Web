@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 import java.util.ArrayList;
 import br.com.exemplo.postagre.beans.Usuario;
 
@@ -80,5 +83,30 @@ public class UsuarioDAO {
 		return lista;
 		
 	}
+	
+	public Usuario buscarporID(Integer id) {
+		Usuario usuretorno = null;
+		String sql = "select * from usuario where id = ?";
+		try {
+			PreparedStatement preparador = con.prepareStatement(sql);
+			preparador.setInt(1, id);
+			//retorno da consulta resultset
+			ResultSet resultado = preparador.executeQuery();
+			if(resultado.next()) {
+				usuretorno = new Usuario();
+				usuretorno.setId(resultado.getInt("id"));
+				usuretorno.setNome(resultado.getString("nome"));
+				usuretorno.setEmail(resultado.getString("email"));
+				usuretorno.setSenha(resultado.getString("senha"));
+			}
+			System.out.println("Encontrado com sucesso! ");
+		}catch(SQLException e) {
+			System.out.println("Erro: de sql"+e.getMessage());
+		}
+		
+		return usuretorno;
+	}
+	
+	
 	
 }
