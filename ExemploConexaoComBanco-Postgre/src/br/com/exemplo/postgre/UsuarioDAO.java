@@ -16,12 +16,13 @@ public class UsuarioDAO {
 	private Connection con = Conexao.getConnection();//gera a conexão com o banco
 	
 	public void cadastrar(Usuario usuario) {
-		String sql = "INSERT INTO USUARIO(nome,email,senha) values(?,?,?)";
+		String sql = "INSERT INTO USUARIO(nome,email,senha,datainscricao) values(?,?,?,?)";
 		try {
 			PreparedStatement preparador = con.prepareStatement(sql);//prepara a instacia com o sql
 			preparador.setString(1, usuario.getNome());//indice que cada um representa, chama o objeto acessando o retorno do metodo
 			preparador.setString(2, usuario.getEmail());
 			preparador.setString(3, usuario.getSenha());
+			preparador.setDate(4, usuario.getDatainscricao());
 			preparador.execute(); // executa o preparador para inserir
 			preparador.close();//fecha o preparador
 			System.out.println("Cadastrado com Sucesso!");
@@ -31,13 +32,14 @@ public class UsuarioDAO {
 	} 
 	
 	public void alterar(Usuario usuario) {
-		String sql = "UPDATE USUARIO SET NOME = ?, EMAIL = ? ,SENHA = ? WHERE id = ?";
+		String sql = "UPDATE USUARIO SET NOME = ?, EMAIL = ? ,SENHA = ?, DATAINSCRICAO = ? WHERE id = ?";
 		try {
 			PreparedStatement preparador = con.prepareStatement(sql);//prepara a instacia com o sql
 			preparador.setString(1, usuario.getNome());//indice que cada um representa, chama o objeto acessando o retorno do metodo
 			preparador.setString(2, usuario.getEmail());
 			preparador.setString(3, usuario.getSenha());
-			preparador.setInt(4, usuario.getId());//busca o id da table para alterar
+			preparador.setDate(4, usuario.getDatainscricao());
+			preparador.setInt(5, usuario.getId());//busca o id da table para alterar
 			
 			preparador.execute(); // executa o preparador para inserir
 			preparador.close();//fecha o preparador
@@ -74,6 +76,7 @@ public class UsuarioDAO {
 				user.setNome(resultados.getString("nome"));// passando o nome da table 
 				user.setEmail(resultados.getString("email"));
 				user.setSenha(resultados.getString("senha"));
+				user.setDatainscricao(resultados.getDate("datainscricao"));
 				lista.add(user);//adciona a instancia criada no final do arraylist
 				
 			}
@@ -98,6 +101,32 @@ public class UsuarioDAO {
 				usuretorno.setNome(resultado.getString("nome"));
 				usuretorno.setEmail(resultado.getString("email"));
 				usuretorno.setSenha(resultado.getString("senha"));
+				usuretorno.setDatainscricao(resultado.getDate("datainscricao"));
+			}
+			System.out.println("Encontrado com sucesso! ");
+		}catch(SQLException e) {
+			System.out.println("Erro: de sql"+e.getMessage());
+		}
+		
+		return usuretorno;
+	}
+	
+	public Usuario autenticacao(Usuario usuario) {
+		Usuario usuretorno = null;
+		String sql = "select * from usuario where email = ? and senha = ?";
+		try {
+			PreparedStatement preparador = con.prepareStatement(sql);
+			preparador.setString(1, usuario.getEmail());
+			preparador.setString(2, usuario.getSenha());
+			//retorno da consulta resultset
+			ResultSet resultado = preparador.executeQuery();
+			if(resultado.next()) {
+				usuretorno = new Usuario();
+				usuretorno.setId(resultado.getInt("id"));
+				usuretorno.setNome(resultado.getString("nome"));
+				usuretorno.setEmail(resultado.getString("email"));
+				usuretorno.setSenha(resultado.getString("senha"));
+				usuretorno.setDatainscricao(resultado.getDate("datainscricao"));
 			}
 			System.out.println("Encontrado com sucesso! ");
 		}catch(SQLException e) {

@@ -2,6 +2,8 @@ package br.com.exemplo.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -10,6 +12,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 import br.com.exemplo.postagre.beans.Usuario;
 import br.com.exemplo.postgre.UsuarioDAO;
@@ -75,18 +79,30 @@ public class UsuarioController extends HttpServlet {
 		String snome = request.getParameter("nome");
 		String semail = request.getParameter("email");
 		String ssenha = request.getParameter("senha");
+		String sdatainscricao = request.getParameter("datainscricao");
+		try{
+			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+			Date data = new Date(format.parse(sdatainscricao).getTime());
+			
+		
+		
 		// criando objeto usuario e atribuindo nos novos valores que foram pegos na tela
 		Usuario user = new Usuario();
 		user.setNome(snome);
 		user.setEmail(semail);
 		user.setSenha(ssenha);
+		user.setDatainscricao(data);
 		user.setId(Integer.parseInt(sid));//só vou deixar aqui pra mostrar como faz o cast
 		//Cria o usuário DAO, que é a conexão com o banco
 		UsuarioDAO userDAO = new UsuarioDAO();
 		userDAO.alterar(user);// associa o usuario alterado ao usuario do banco alterando ele
 		//PrintWriter out = response.getWriter();
 		response.sendRedirect("UsuarioController?acao=listar");
-		
+			
+		} catch (java.text.ParseException e) {
+			// TODO Auto-generated catch block
+			System.out.print("Erro na data -"+e.getMessage());
+		}
 		
 		
 	}

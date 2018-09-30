@@ -1,12 +1,18 @@
 package br.com.exemplo.postagre.beans;
-
+import java.sql.Date;
 public class Usuario {
 	private Integer id;
 	private String nome;
 	private String email;
 	private String senha;
+	private Date datainscricao;
 	
-	
+	public Date getDatainscricao() {
+		return datainscricao;
+	}
+	public void setDatainscricao(Date datainscricao) {
+		this.datainscricao = datainscricao;
+	}
 	public Integer getId() {
 		return id;
 	}

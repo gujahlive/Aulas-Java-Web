@@ -25,6 +25,7 @@ List<Usuario> listaResult = (List<Usuario>)request.getAttribute("lista");// vari
 	<th>Nome</th>
 	<th>Email</th>
 	<th>Senha</th>
+	<th>Data de Inscrição</th>
 	<th>Excluir</th>
 	<th>Editar</th>
 </tr>
@@ -36,6 +37,7 @@ for(Usuario u : listaResult) {
 	<td><%=u.getNome() %></td>
 	<td><%=u.getEmail() %></td>
 	<td><%=u.getSenha() %></td>
+	<td><%=u.getDatainscricao() %></td>
 	<th><a href="UsuarioController?acao=delete&id=<%=u.getId() %>">DELETAR</a></th>
 	<th><a href="UsuarioController?acao=editar&id=<%=u.getId() %>">EDITAR</a></th>
 </tr>

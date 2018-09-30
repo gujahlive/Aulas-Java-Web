@@ -10,6 +10,19 @@
 <meta charset="ISO-8859-1">
 <title>Editar</title>
 </head>
+<script>
+function formatar(mascara, documento){
+	var i = documento.value.length;
+	var saida = mascara.substring(0,1);
+	var texto = mascara.substring(i);
+	if(texto.substring(0,1) != saida){
+		documento.value += texto.substring(0,1);
+	}
+}
+
+</script>
+
+
 <body>
 <%Usuario user = (Usuario)request.getAttribute("usuario");
 %>	
@@ -24,6 +37,9 @@
 	<input type="text" name="email" value="<%=user.getEmail() %>"/>
 	<label>Senha</label>
 	<input type="password" name="senha" value="<%=user.getSenha() %>"/>
+	<label>Data Inscricao</label>
+	<input type="text" name="datainscricao" OnKeyPress="formatar('##/##/####',this)" value="<%=user.getDatainscricao() %>"/><br/>
+	
 	<input type="submit" value="Salvar"/>
 	</form>
 </body>

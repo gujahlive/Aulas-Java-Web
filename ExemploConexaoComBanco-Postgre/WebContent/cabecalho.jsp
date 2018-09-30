@@ -10,5 +10,6 @@
 <a href="home.jsp">Inicio</a><br/>
 <a href="UsuarioController?acao=cadastrar">Cadastro</a><br/>
 <a href="UsuarioController?acao=listar">Lista de usuarios</a><br/>
+<a href="autenticador">Sair</a><br/>
 </body>
 </html>
